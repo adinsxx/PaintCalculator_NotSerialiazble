@@ -2,7 +2,7 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Room implements Serializable {
+public class Room implements Serializable, Paintable {
 
     private ArrayList<Wall> wallList;
     //Add a static int called roomCount to the Room
@@ -52,5 +52,15 @@ public class Room implements Serializable {
     //Add getter to get room number
     public int getRoomNum() {
         return roomNum;
+    }
+
+    @Override
+    public double getPremiumPaintCostPerGallon() {
+        return (getArea() / 350) * PREMIUM_PAINT_COST_PER_GALLON;
+    }
+
+    @Override
+    public double getStandardPaintCostPerGallon() {
+        return (getArea() / 350) * STANDARD_PAINT_COST_PER_GALLON;
     }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class PaintCalculator {
 
-    private List<Room> roomList = new ArrayList<Room>();
+    private List<Paintable> roomList = new ArrayList<Paintable>();
     private Scanner keyboard;
 
     public static void main(String[] args) {
@@ -36,6 +36,10 @@ public class PaintCalculator {
                     case 4:
                         printRooms();
                         break;
+                    case 9:
+                        Paintable garage = new Garage();
+                        roomList.add(garage);
+                        break;
                     case 5:
                         System.out.println("Goodbye");
                         System.exit(0);
@@ -52,7 +56,7 @@ public class PaintCalculator {
             System.out.println("No rooms yet");
         }
 
-        for (Room room : roomList) {
+        for (Paintable room : roomList) {
             System.out.println(room);
         }
     }
@@ -63,9 +67,13 @@ public class PaintCalculator {
         System.out.println("2. Write rooms to file");
         System.out.println("3. Read rooms from file");
         System.out.println("4. View rooms");
+        //Hit view to see pricing for making standard garage
+        System.out.println("9. Make Standard Garage");
         System.out.println("5. Exit");
         System.out.println();
     }
+
+
 
     private int promptForDimension(String name) {
         System.out.print("Enter the room's " + name + ": ");

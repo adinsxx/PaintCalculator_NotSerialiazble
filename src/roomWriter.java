@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class roomWriter {
-    public static void writeRoomFIle(String filename, List<Room> roomList) {
+    public static void writeRoomFIle(String filename, List<Paintable> roomList) {
         // Serialization
         try
         {
@@ -14,7 +14,7 @@ public class roomWriter {
             ObjectOutputStream out = new ObjectOutputStream(file);
 
             // Method for serialization of object
-            for (Room room: roomList) {
+            for (Paintable room: roomList) {
                 out.writeObject(room);
             }
 

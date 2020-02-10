@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class roomReader {
-    public static List<Room> readRoomFile(String fileName) {
-        List<Room> rooms = new ArrayList<>();
+    public static List<Paintable> readRoomFile(String fileName) {
+        List<Paintable> rooms = new ArrayList<>();
         // Deserialization
         try {
             // Reading the object from a file
